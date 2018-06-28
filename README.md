@@ -26,3 +26,5 @@ It consists of three types of processes: client processes, a BlockStore process,
 ### MetadataStore
 - maintains the mapping of filenames to hashlists that stored in memory 
 - APIs: (version, hashList) = ReadFile(fileName), ModifyFile(fileName, version, hashList), DeleteFile(fileName, version), IsLeader(Distributed: Crash, Restore, GetVersion)
+
+starter code Copyright (C) George Porter, 2017, 2018.
