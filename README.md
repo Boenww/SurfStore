@@ -15,15 +15,14 @@ The SurfStore service is composed of the following two sub-services:
 
 It consists of three types of processes: client processes, a BlockStore process, and one or more Metadata processes. Note that one (and only one) of the Metadata processes is specially designated as the “leader”, meaning that all client requests should go through that server and that server only.
 
-Client
+### Client
 - create, modify, read, and delete files
 - APIs: upload(pathToFile), download(fileName, pathToStore), delete(fileName), getversion(fileName)
 
-BlockStore
+### BlockStore
 - key-value in memory data store
 - APIs: StoreBlock(hash, bytes), GetBlock(hash), HasBlock(hash)
 
-MetadataStore
-
+### MetadataStore
 - maintains the mapping of filenames to hashlists that stored in memory 
 - APIs: (version, hashList) = ReadFile(fileName), ModifyFile(fileName, version, hashList), DeleteFile(fileName, version), IsLeader(Distributed: Crash, Restore, GetVersion)
